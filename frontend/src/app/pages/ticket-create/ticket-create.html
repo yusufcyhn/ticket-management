@@ -1,0 +1,17 @@
+<h2>Yeni Ticket Oluştur</h2>
+
+<form (ngSubmit)="createTicket()">
+
+  <label for="title">Başlık</label>
+  <input type="text" id="title" [(ngModel)]="ticket.title" name="title" required>
+
+  <label for="description">Açıklama</label>
+  <textarea id="description" [(ngModel)]="ticket.description" name="description"></textarea>
+
+  <label for="assignedTo">Atanan Kişi</label>
+  <input type="text" id="assignedTo" [(ngModel)]="ticket.assignedTo" name="assignedTo">
+
+  <button type="submit">Oluştur</button>
+</form>
+
+<p *ngIf="errorMessage" style="color:red">{{ errorMessage }}</p>
