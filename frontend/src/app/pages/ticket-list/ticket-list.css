@@ -71,3 +71,18 @@ button.danger {
   color: #666;
   margin-bottom: 2px;
 }
+
+@media (max-width: 600px) {
+  .ticket-list {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}
+

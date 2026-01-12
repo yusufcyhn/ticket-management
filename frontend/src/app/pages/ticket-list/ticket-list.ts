@@ -64,4 +64,8 @@ updateTicket(): void {
       error: (err) => console.error('Ticket yüklenemedi', err)
     });
   }
+
+  goToDetail(id: number): void {
+  this.router.navigate(['tickets', id]);
+}
 }

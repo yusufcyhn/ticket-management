@@ -1,0 +1,19 @@
+<div *ngIf="ticket" class="detail-card">
+  <div class="detail-header">
+  <h2>{{ ticket.title }}</h2>
+</div>
+
+
+  <p>{{ ticket.description }}</p>
+
+  <span class="status" [ngClass]="ticket.status">
+    {{ ticket.status }}
+  </span>
+
+  <p><strong>Atanan:</strong> {{ ticket.assignedTo || '—' }}</p>
+
+  <button class="back-btn" (click)="goBack()">
+  ← Listeye dön
+</button>
+  
+</div>

@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "cadac584-616c-4ae0-b64d-fda08243d1a9",
+		"name": "Ticket Management API",
+		"description": "Ticket Management uygulaması için CRUD API endpoint’leri",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31747828",
+		"_collection_link": "https://rastmobileticketmanagementtask.postman.co/workspace/f22e2a87-67a5-4343-bbe9-d86c3a7ceacb/collection/31747828-cadac584-616c-4ae0-b64d-fda08243d1a9?action=share&source=collection_link&creator=31747828"
+	},
+	"item": [
+		{
+			"name": "Get All Tickets",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5062/api/Tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5062",
+					"path": [
+						"api",
+						"Tickets"
+					]
+				},
+				"description": "Tüm ticket listesini getirir"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Ticket by Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5062/api/Tickets/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5062",
+					"path": [
+						"api",
+						"Tickets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Deneme Ticket2\",\r\n  \"description\": \"Test2 için\",\r\n  \"assignedTo\": \"Yusuf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5062/api/Tickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5062",
+					"path": [
+						"api",
+						"Tickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Ticket",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"title\": \"Güncellenmiş Ticket\",\r\n  \"description\": \"Test güncelleme\",\r\n  \"status\": \"InProgress\",\r\n  \"assignedTo\": \"Fatih\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5062/api/Tickets/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5062",
+					"path": [
+						"api",
+						"Tickets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Ticket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5062/api/Tickets/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5062",
+					"path": [
+						"api",
+						"Tickets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
