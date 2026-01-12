@@ -1,1 +1,11 @@
 <router-outlet></router-outlet>
+<div class="recent-pages">
+  <h4>Son gezdiklerim</h4>
+  <ul>
+    <li *ngFor="let page of recentPages">
+      {{ page }}
+    </li>
+  </ul>
+</div>
+
+

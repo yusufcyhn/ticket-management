@@ -2,16 +2,34 @@
 
 <form (ngSubmit)="createTicket()">
 
-  <label for="title">Başlık</label>
-  <input type="text" id="title" [(ngModel)]="ticket.title" name="title" required>
+  <input
+    type="text"
+    placeholder="Başlık"
+    [(ngModel)]="ticket.title"
+    name="title"
+    required
+  />
 
-  <label for="description">Açıklama</label>
-  <textarea id="description" [(ngModel)]="ticket.description" name="description"></textarea>
+  <input
+    type="text"
+    placeholder="Açıklama"
+    [(ngModel)]="ticket.description"
+    name="description"
+    required
+  />
 
-  <label for="assignedTo">Atanan Kişi</label>
-  <input type="text" id="assignedTo" [(ngModel)]="ticket.assignedTo" name="assignedTo">
+
+
+  <select
+    [(ngModel)]="ticket.assignedTo"
+    name="assignedTo"
+  >
+    <option value="">Kişi Seç</option>
+    <option *ngFor="let user of users" [value]="user">
+      {{ user }}
+    </option>
+  </select>
 
   <button type="submit">Oluştur</button>
-</form>
 
-<p *ngIf="errorMessage" style="color:red">{{ errorMessage }}</p>
+</form>

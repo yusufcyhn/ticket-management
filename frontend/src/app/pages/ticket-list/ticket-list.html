@@ -1,18 +1,64 @@
-    <h2>Ticket Listesi</h2>
-    <ul>
-    <li *ngFor="let ticket of tickets">
-        <ng-container *ngIf="editingTicketId !== ticket.id; else editForm">
-        <strong>{{ ticket.title }}</strong> - {{ ticket.description }} - {{ticket.status}}
-        <button (click)="deleteTicket(ticket.id)">Sil</button>
-        <button (click)="editTicket(ticket)">Düzenle</button>
-        </ng-container>
+<h2>Ticket Listesi</h2>
 
-        <ng-template #editForm>
-        <input [(ngModel)]="updatedTicket.title" placeholder="Başlık" />
-        <input [(ngModel)]="updatedTicket.description" placeholder="Açıklama" />
-        <button (click)="updateTicket()">Kaydet</button>
-        <button (click)="editingTicketId = null">İptal</button>
-        </ng-template>
-    </li>
-    </ul>
-    <button (click)="goToCreate()">Yeni Ticket Oluştur</button>
+<div class="ticket-list">
+  <div class="ticket-card" *ngFor="let ticket of tickets">
+    
+    <ng-container *ngIf="editingTicketId !== ticket.id; else editForm">
+      <h3>{{ ticket.title }}</h3>
+      <p>{{ ticket.description }}</p>
+
+      <span class="status" [ngClass]="ticket.status">
+  {{ ticket.status }}
+</span>
+
+
+      <p><strong>Atanan:</strong> {{ ticket.assignedTo || '—' }}</p>
+
+      <div class="actions">
+        <button (click)="editTicket(ticket)">Düzenle</button>
+        <button class="danger" (click)="deleteTicket(ticket.id)">Sil</button>
+      </div>
+    </ng-container>
+
+    
+<ng-template #editForm>
+  <div class="edit-field">
+    <label>Title</label>
+    <input [(ngModel)]="updatedTicket.title" />
+  </div>
+
+  <div class="edit-field">
+    <label>Description</label>
+    <input [(ngModel)]="updatedTicket.description" />
+  </div>
+
+  <div class="edit-field">
+    <label>Assigned To</label>
+    <select [(ngModel)]="updatedTicket.assignedTo" name="assignedTo">
+      <option *ngFor="let user of users" [value]="user">
+        {{ user }}
+      </option>
+    </select>
+  </div>
+
+  <div class="edit-field">
+    <label>Status</label>
+    <select [(ngModel)]="updatedTicket.status" name="status">
+      <option value="Open">Open</option>
+      <option value="InProgress">In Progress</option>
+      <option value="Closed">Closed</option>
+    </select>
+  </div>
+
+  <button (click)="updateTicket()">Kaydet</button>
+  <button (click)="editingTicketId = null">İptal</button>
+</ng-template>
+
+
+
+
+    
+  </div>
+</div>
+
+<button class="create-btn" (click)="goToCreate()">+ Yeni Ticket</button>

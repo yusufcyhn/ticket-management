@@ -1,0 +1,73 @@
+.ticket-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.ticket-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+}
+
+.ticket-card h3 {
+  margin: 0 0 8px;
+}
+
+.status {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 6px;
+}
+
+.status.Open {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+
+.status.InProgress {
+  background-color: #fff4e5;
+  color: #b26a00;
+}
+
+.status.Closed {
+  background-color: #fdecea;
+  color: #a50e0e;
+}
+
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+button.danger {
+  background: #d9534f;
+  color: white;
+  border: none;
+}
+
+.create-btn {
+  margin-top: 20px;
+}
+
+
+.edit-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.edit-field label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 2px;
+}

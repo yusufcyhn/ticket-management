@@ -12,8 +12,11 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './ticket-list.html',
   styleUrls: ['./ticket-list.css']
 })
+
+
 export class TicketList implements OnInit {
 
+  users: string[] = ['Ali', 'Fatih', 'Yusuf', 'Serdar'];
 
   tickets: Ticket[] = [];
   editingTicketId: number | null = null;
@@ -38,7 +41,7 @@ export class TicketList implements OnInit {
 
   editTicket(ticket: Ticket): void {
   this.editingTicketId = ticket.id;
-  this.updatedTicket = { ...ticket }; // ticket’in bir kopyasını al
+  this.updatedTicket = { ...ticket };
   }
 
 updateTicket(): void {

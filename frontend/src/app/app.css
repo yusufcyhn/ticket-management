@@ -1,0 +1,21 @@
+.recent-pages {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 180px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.recent-pages h4 {
+  margin: 0 0 6px 0;
+  font-size: 13px;
+}
+
+.recent-pages ul {
+  padding-left: 16px;
+  margin: 0;
+}
